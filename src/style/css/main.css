@@ -1,4 +1,6 @@
 @import 'tailwindcss';
 @theme {
   --spacing: 1px;
+  --color-text-default: #939394;
+  --color-hover-default: #3b3c3d;
 }

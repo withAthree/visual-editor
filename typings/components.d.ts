@@ -15,8 +15,11 @@ declare module 'vue' {
     IconSupport: typeof import('./../src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./../src/components/icons/IconTooling.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
+    NIcon: typeof import('naive-ui')['NIcon']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Stage: typeof import('./../src/components/Stage.vue')['default']
+    StageControlBar: typeof import('./../src/components/StageControlBar.vue')['default']
     TheWelcome: typeof import('./../src/components/TheWelcome.vue')['default']
     WelcomeItem: typeof import('./../src/components/WelcomeItem.vue')['default']
   }

@@ -25,11 +25,6 @@ export default defineConfig({
         'vue',
         'vue-router',
         {
-          from: 'vue-router',
-          imports: ['RouteLocationRaw'],
-          type: true,
-        },
-        {
           'naive-ui': [
             'useDialog',
             'useMessage',
@@ -41,6 +36,8 @@ export default defineConfig({
       dts: 'typings/auto-imports.d.ts',
     }),
     Components({
+      dirs: ['src/components'],
+      extensions: ['vue'],
       include: [/\.vue$/, /\.vue\?vue/],
       exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
       resolvers: [NaiveUiResolver()],

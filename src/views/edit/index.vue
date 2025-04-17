@@ -1,9 +1,13 @@
 <script setup lang="ts">
+
 </script>
 
 <template>
-  <router-view />
+  <div class="w-screen h-screen">
+    <Stage />
+  </div>
 </template>
 
 <style scoped>
+
 </style>

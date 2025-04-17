@@ -16,6 +16,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
+    "big.js": "^6.2.2",
+    "default-passive-events": "^2.0.0",
+    "hotkeys-js": "^3.13.9",
+    "lodash": "^4.17.21",
     "pinia": "^3.0.1",
     "tailwindcss": "^4.1.4",
     "vue": "^3.5.13",
@@ -27,6 +31,7 @@
     "@types/jsdom": "^21.1.7",
     "@types/node": "^22.14.0",
     "@unrs/resolver-binding-wasm32-wasi": "^1.5.0",
+    "@vicons/antd": "^0.13.0",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vitejs/plugin-vue-jsx": "^4.1.2",
     "@vue/test-utils": "^2.4.6",
