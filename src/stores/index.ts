@@ -1,8 +1,11 @@
 import { createPinia } from 'pinia';
 
+const pinia = createPinia();
+
 export const installPinia = (app) => {
-  const pinia = createPinia();
   app.use(pinia);
 };
+
+export default pinia;
 
 export * from './stageConfig';

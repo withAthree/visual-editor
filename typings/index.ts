@@ -11,4 +11,4 @@ export interface StageConfig extends BasicConfig {
 }
 
 // 鼠标状态
-export type MouseStatus = 'move';
+export type MouseStatus = 'move' | 'brush';

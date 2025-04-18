@@ -1,13 +1,16 @@
+import pinia, { useStageStore } from '@/stores';
+
+const stageStore = useStageStore(pinia);
+
 interface Coordinate { x: number, y: number }
-type Stage = Coordinate & { s: number };
 
 /**
  * 鼠标坐标转换为舞台坐标系坐标
  */
-const pointToStageByMouse = (point: Coordinate, stage: Stage): Coordinate => {
+const pointToStageByMouse = (x: number, y: number): Coordinate => {
   return {
-    x: (point.x - stage.x) / stage.s,
-    y: (point.y - stage.y) / stage.s,
+    x: (x - stageStore.stageConfig.x) / stageStore.stageConfig.s,
+    y: (y - stageStore.stageConfig.y) / stageStore.stageConfig.s,
   };
 };
 
