@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import type { MouseStatus } from '../../typings';
+import type { MouseStatus } from '../types';
 import key from '@/common/key';
 import MouseEvent from '@/events/mouseEvent';
-import { useStageStore } from '@/stores';
+import { useComponentStore, useStageStore } from '@/stores';
 import { toPx } from '@/utils';
 import coordinate from '@/utils/tools';
 import _ from 'lodash';
+import { nanoid } from 'nanoid';
 
 const mouseEvent = new MouseEvent();
 
 const stageStore = useStageStore();
+const componentStore = useComponentStore();
 
 const mouseState = ref<MouseStatus>(''); // 鼠标状态
 let mouseAnchor = {}; // 鼠标当前位置
@@ -110,6 +112,11 @@ mouseEvent.setWheel((e) => {
       y: e.offsetY,
     });
   }
+
+  if (mouseState.value === '') {
+    // 如果鼠标没按下左键，只是移动
+    mouseMoved.value = false;
+  }
 });
 
 onMounted(() => {
@@ -118,10 +125,32 @@ onMounted(() => {
     return false;
   };
 });
+
+// 拖拽进入画布
+const handleDragEnter = () => {
+};
+// 拖拽离开画布
+const handleDragLeave = () => {
+};
+
+const handleDragOver = (e) => {
+  e.preventDefault();
+};
+
+const handleDrop = (e) => {
+  e.preventDefault();
+  const { x, y } = coordinate.pointToStageByMouse(e.offsetX - componentStore.dragStatus.currentDraggingOffset.offsetX, e.offsetY - componentStore.dragStatus.currentDraggingOffset.offsetY);
+  const copyComponent = _.cloneDeep(componentStore.dragStatus.draggingComponent);
+  copyComponent.x = x;
+  copyComponent.y = y;
+  copyComponent.id = nanoid();
+  copyComponent.zIndex = componentStore.getMaximumZIndex;
+  componentStore.addComponent(copyComponent);
+};
 </script>
 
 <template>
-  <div class="w-full h-full relative overflow-hidden stage-bg">
+  <div class="w-full h-full relative overflow-hidden stage-bg" @dragenter="handleDragEnter" @dragleave="handleDragLeave" @dragover="handleDragOver" @drop="handleDrop">
     <!-- 画板 -->
     <div class="absolute drawing-board origin-top-left" :style="drawingBoardStyle">
       <Render />

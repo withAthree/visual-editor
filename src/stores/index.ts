@@ -8,4 +8,5 @@ export const installPinia = (app) => {
 
 export default pinia;
 
+export * from './components';
 export * from './stageConfig';

@@ -1,18 +1,16 @@
-const isFunction = (fn) => {
-  return fn && typeof fn === 'function';
-};
+type Function = (...args: any[]) => void;
 
 export default class MouseEvent {
-  #leftKeyDownFn = () => {};
-  #rightKeyDownFn = () => {};
-  #middleKeyDownFn = () => {};
-  #leftKeyUpFn = () => {};
-  #rightKeyUpFn = () => {};
-  #middleKeyUpFn = () => {};
-  #move = () => {};
-  #wheel = () => {};
+  #leftKeyDownFn: Function = () => {};
+  #rightKeyDownFn: Function = () => {};
+  #middleKeyDownFn: Function = () => {};
+  #leftKeyUpFn: Function = () => {};
+  #rightKeyUpFn: Function = () => {};
+  #middleKeyUpFn: Function = () => {};
+  #move: Function = () => {};
+  #wheel: Function = () => {};
 
-  down(e) {
+  down(e: any) {
     if (e.button === 0) {
       this.#leftKeyDownFn(e);
     }
@@ -24,7 +22,7 @@ export default class MouseEvent {
     }
   }
 
-  up(e) {
+  up(e: any) {
     if (e.button === 0) {
       this.#leftKeyUpFn(e);
     }
@@ -36,59 +34,43 @@ export default class MouseEvent {
     }
   }
 
-  wheel(e) {
+  wheel(e: any) {
     this.#wheel(e);
   }
 
-  move(e) {
+  move(e: any) {
     this.#move(e);
   }
 
-  setLeftKeyDownFn(fn) {
-    if (isFunction(fn)) {
-      this.#leftKeyDownFn = fn;
-    }
+  setLeftKeyDownFn(fn: Function) {
+    this.#leftKeyDownFn = fn;
   }
 
-  setRightKeyDownFn(fn) {
-    if (isFunction(fn)) {
-      this.#rightKeyDownFn = fn;
-    }
+  setRightKeyDownFn(fn: Function) {
+    this.#rightKeyDownFn = fn;
   }
 
-  setMiddleKeyDownFn(fn) {
-    if (isFunction(fn)) {
-      this.#middleKeyDownFn = fn;
-    }
+  setMiddleKeyDownFn(fn: Function) {
+    this.#middleKeyDownFn = fn;
   }
 
-  setLeftKeyUpFn(fn) {
-    if (isFunction(fn)) {
-      this.#leftKeyUpFn = fn;
-    }
+  setLeftKeyUpFn(fn: Function) {
+    this.#leftKeyUpFn = fn;
   }
 
-  setRightKeyUpFn(fn) {
-    if (isFunction(fn)) {
-      this.#rightKeyUpFn = fn;
-    }
+  setRightKeyUpFn(fn: Function) {
+    this.#rightKeyUpFn = fn;
   }
 
-  setMiddleKeyUpFn(fn) {
-    if (isFunction(fn)) {
-      this.#middleKeyUpFn = fn;
-    }
+  setMiddleKeyUpFn(fn: Function) {
+    this.#middleKeyUpFn = fn;
   }
 
-  setMove(fn) {
-    if (isFunction(fn)) {
-      this.#move = fn;
-    }
+  setMove(fn: Function) {
+    this.#move = fn;
   }
 
-  setWheel(fn) {
-    if (isFunction(fn)) {
-      this.#wheel = fn;
-    }
+  setWheel(fn: Function) {
+    this.#wheel = fn;
   }
 }

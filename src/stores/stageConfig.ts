@@ -1,6 +1,7 @@
-import type { StageConfig } from '../../typings';
+import type { StageConfig } from '../types';
 import Big from 'big.js';
 import { defineStore } from 'pinia';
+import { reactive } from 'vue';
 
 export const useStageStore = defineStore('stageConfig', () => {
   const stageConfig = reactive<StageConfig>({
@@ -41,7 +42,7 @@ export const useStageStore = defineStore('stageConfig', () => {
   };
 
   // 鼠标滚轮缩放
-  const updateStageScale = (payload) => {
+  const updateStageScale = (payload: any) => {
     const oldS = stageConfig.s;
     // 算新的缩放
     let newScale = 0;

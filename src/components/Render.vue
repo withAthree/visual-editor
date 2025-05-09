@@ -1,27 +1,37 @@
 <script lang="ts">
+import type { Params } from '@/config/componentsConfig';
 import allComponents from '@/config/components';
+import { useComponentStore } from '../stores';
+import { toPx } from '../utils';
+
+const componentStore = useComponentStore();
 
 export default {
   setup() {
     return () => {
-      const renderList = [];
-      renderList.push(
-        h(
-          'div',
-          {
-            style: {
-              position: 'absolute',
-              left: '50%',
-              top: '50%',
-              background: 'red',
-            },
-            key: '123',
-          },
+      const renderList: Params[] = [];
+      for (let i = 0; i < componentStore.components.length; i++) {
+        const item = componentStore.components[i];
+        renderList.push(
           h(
-            allComponents.rectangle,
+            'div',
+            {
+              style: {
+                position: 'absolute',
+                left: toPx(item.x),
+                top: toPx(item.y),
+                width: toPx(item.w),
+                height: toPx(item.h),
+              },
+              key: item.id,
+            },
+            h(
+              allComponents[item.component],
+            ),
           ),
-        ),
-      );
+        );
+      }
+
       return renderList;
     };
   },

@@ -31,6 +31,10 @@ export default defineConfig({
             'useNotification',
             'useLoadingBar',
           ],
+          '@vueuse/core': [
+            'useMouse', // import { useMouse } from '@vueuse/core',
+            'onClickOutside', // import { onClickOutside } from '@vueuse/core',
+          ],
         },
       ],
       dts: 'typings/auto-imports.d.ts',
