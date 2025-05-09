@@ -4,6 +4,7 @@
   --color-bg-default: #272829;
   --color-text-default: #939394;
   --color-hover-default: #3b3c3d;
+  --color-border-default: #313233;
 }
 
 #app,
@@ -19,6 +20,7 @@ html {
       5 3,
     default;
   margin: 0;
+  color: #939394;
 }
 
 /* reset css */

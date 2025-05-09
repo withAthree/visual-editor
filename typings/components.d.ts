@@ -24,6 +24,7 @@ declare module 'vue' {
     NIcon: typeof import('naive-ui')['NIcon']
     NScrollbar: typeof import('naive-ui')['NScrollbar']
     NSlider: typeof import('naive-ui')['NSlider']
+    NTree: typeof import('naive-ui')['NTree']
     Render: typeof import('./../src/components/Render.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
@@ -31,6 +32,7 @@ declare module 'vue' {
     StageControlBar: typeof import('./../src/components/StageControlBar.vue')['default']
     TheWelcome: typeof import('./../src/components/TheWelcome.vue')['default']
     TopMenu: typeof import('./../src/components/TopMenu.vue')['default']
+    Tree: typeof import('./../src/components/Tree.vue')['default']
     WelcomeItem: typeof import('./../src/components/WelcomeItem.vue')['default']
   }
 }
