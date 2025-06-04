@@ -144,7 +144,6 @@ const handleDrop = (e) => {
   copyComponent.x = x;
   copyComponent.y = y;
   copyComponent.id = nanoid();
-  copyComponent.zIndex = componentStore.getMaximumZIndex;
   componentStore.addComponent(copyComponent);
 };
 </script>

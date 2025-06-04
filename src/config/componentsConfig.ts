@@ -9,7 +9,6 @@ export interface Params<K extends string> {
   x: number
   y: number
   component: K
-  zIndex: number
 }
 type ComponentConfigs = {
   [K in keyof typeof components]: Params<K>
@@ -23,7 +22,6 @@ const configs: ComponentConfigs = {
     y: 0,
     w: 100,
     h: 100,
-    zIndex: 0,
   },
 };
 

@@ -22,6 +22,7 @@ export default {
                 top: toPx(item.y),
                 width: toPx(item.w),
                 height: toPx(item.h),
+                zIndex: i,
               },
               key: item.id,
             },
