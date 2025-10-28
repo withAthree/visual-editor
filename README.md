@@ -1,33 +1,25 @@
-# Visual Editor
+# vue3-start
 
-## Git
+## Project setup
 
-Windows:
-
-```sh
-git config --global core.autocrlf true
-```
-
-## Run project
-
-```sh
+```bash
 pnpm install
 ```
 
-```sh
-pnpm dev
+## Windows please run
+
+```bash
+git config --global core.autocrlf true
 ```
 
-```sh
-pnpm build
+## git-hooks
+
+```bash
+npx simple-git-hooks
 ```
 
-```sh
-pnpm test:unit
-```
+## eslint config
 
-## Eslint config list
-
-```sh
+```bash
 npx @eslint/config-inspector
 ```

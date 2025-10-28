@@ -1,13 +1,14 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-
 import { installRouter } from './router';
 import { installPinia } from './stores';
-import './style/css/main.css';
+import './styles/index.css';
 
-const app = createApp(App);
+const init = async () => {
+  const app = createApp(App);
+  installRouter(app);
+  installPinia(app);
+  app.mount('#app');
+};
 
-installPinia(app);
-installRouter(app);
-
-app.mount('#app');
+init();

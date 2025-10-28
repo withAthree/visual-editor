@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <div>123</div>
+  <div>
+    main1
+  </div>
 </template>
 
 <style scoped>

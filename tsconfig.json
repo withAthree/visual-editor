@@ -1,24 +1,12 @@
 {
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.vitest.json"
-    }
-  ],
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "files": [],
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx",
-    "typings/**/*.ts",
-    "typings/**/*.d.ts"
-  ],
-  "exclude": ["node_modules"]
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["env.d.ts", "src/**/*.vue","src/**/*.ts","src/**/*.tsx","src/**/*.d.ts","types/*.d.ts"],
+  "exclude": ["node_modules","dist"]
 }
